@@ -12,6 +12,17 @@ public class ExercicioFacilController {
 
     @GetMapping("/ex-01/{palavra}")
     public Boolean exercicioFacil(@PathVariable String palavra) {
-        return palavra.toLowerCase().charAt(0) == palavra.toLowerCase().charAt(palavra.length() - 1);
+        int contador = 0;
+        Boolean palindromo = false;
+
+        for (int i = palavra.length() - 1; i >= 0 ; i--) {
+            if(palavra.toLowerCase().charAt(contador++) == palavra.toLowerCase().charAt(i)) {
+                palindromo = true;
+            } else {
+                palindromo = false;
+            }
+        }
+        System.out.println(palindromo);
+        return palindromo;
     }
 }
