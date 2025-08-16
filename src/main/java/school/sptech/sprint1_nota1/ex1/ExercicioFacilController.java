@@ -22,7 +22,6 @@ public class ExercicioFacilController {
                 palindromo = false;
             }
         }
-        System.out.println(palindromo);
         return palindromo;
     }
 }
